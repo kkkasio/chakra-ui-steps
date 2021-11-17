@@ -46,10 +46,11 @@ export const Connector = React.memo(
           me: isVertical ? 0 : 2,
           height: isVertical ? 'auto' : '2px',
           alignSelf: isVertical ? 'stretch' : 'auto',
-          borderTopWidth: isLastStep || isVertical ? 0 : '2px',
+          borderTopWidth: isLastStep || isVertical ? 0 : '4px',
           borderInlineStartWidth: isLastStep || !isVertical ? 0 : '2px',
           minHeight: isLastStep || !isVertical ? 'auto' : '1.5rem',
           borderColor: connector.borderColor,
+          borderRadius: '10px',          
           ...connectorStyles,
         }}
         data-highlighted={dataAttr(isCompletedStep)}

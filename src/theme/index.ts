@@ -25,7 +25,7 @@ const baseStyleIcon: SystemStyleObject = {
 };
 
 const baseStyleLabel: SystemStyleFunction = props => ({
-  color: mode(`gray.900`, `gray.100`)(props),
+  color: '#1A171B',
 });
 
 const baseStyleDescription: SystemStyleFunction = props => ({
@@ -44,20 +44,23 @@ const baseStyleConnector: SystemStyleFunction = props => {
     _highlighted: {
       borderColor: activeColor,
     },
+    mt: '-25px'
   };
 };
 
 const baseStyleStepIconContainer: SystemStyleFunction = props => {
-  const { colorScheme: c } = props;
-  const inactiveColor = mode('gray.200', 'gray.700')(props);
+  const { colorScheme: c } = props;  
+  const inactiveColor = '#fff';
   const activeColor = `${c}.500`;
 
   return {
     bg: inactiveColor,
-    borderColor: inactiveColor,
+    borderColor: c,
     transitionProperty: 'background, border-color',
     transitionDuration: 'normal',
+    opacity: 0.5,
     _activeStep: {
+      opacity: 1,
       bg: mode(darken(inactiveColor, 0.5), lighten(inactiveColor, 0.5))(props),
       borderColor: activeColor,
       _invalid: {
@@ -66,6 +69,7 @@ const baseStyleStepIconContainer: SystemStyleFunction = props => {
       },
     },
     _highlighted: {
+      opacity: 1,
       bg: activeColor,
       borderColor: activeColor,
     },
@@ -81,8 +85,11 @@ const baseStyle: PartsStyleFunction<typeof parts> = props => ({
   icon: baseStyleIcon,
   label: baseStyleLabel(props),
   labelContainer: {},
+  labelIconContainer: {},
   step: {},
-  stepContainer: {},
+  stepContainer: {    
+    flexDir: 'column',
+  },
   stepIconContainer: baseStyleStepIconContainer(props),
   steps: {},
 });

@@ -43,7 +43,7 @@
     "trailingComma": "es5"
   },
   "description": "Steps component designed to work seamlessly with Chakra UI",
-  "name": "chakra-ui-steps",
+  "name": "chakra-ui-steps-gndi",
   "author": "Jean Verster",
   "module": "dist/chakra-ui-steps.esm.js",
   "keywords": [

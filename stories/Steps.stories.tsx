@@ -110,11 +110,13 @@ const Content = ({ index, ...rest }: ContentProps) => {
   );
 };
 
-const steps = [{ label: 'Step 1' }, { label: 'Step 2' }, { label: 'Step 3' }];
+const steps = [{ label: 'Dados de  1' }, { label: 'Dados de  2' }, { label: 'Dados de  3' }, { label: 'Dados de  4' }, { label: 'Dados de  5' }];
 const descriptionSteps = [
-  { label: 'Step 1', description: 'Step 1 Description' },
-  { label: 'Step 2', description: 'Step 2 Description' },
-  { label: 'Step 3', description: 'Step 3 Description' },
+  { label: 'Descrição 1', description: 'Step 1 Description' },
+  { label: 'Descrição 2', description: 'Step 2 Description' },
+  { label: 'Descrição 3', description: 'Step 3 Description' },
+  { label: 'Descrição 4', description: 'Step 3 Description' },
+  { label: 'Descrição 5', description: 'Step 3 Description' },
 ];
 
 //👇 We create a “template” of how args map to rendering
@@ -127,14 +129,14 @@ export const Horizontal = () => {
   const { size } = useConfigContext();
   return (
     <>
-      <Steps size={size} activeStep={activeStep}>
+      <Steps colorScheme="orange" size={size} activeStep={activeStep}>
         {steps.map(({ label }, index) => (
           <Step label={label} key={label}>
             <Content my={6} index={index} />
           </Step>
         ))}
       </Steps>
-      {activeStep === 3 ? (
+      {activeStep === 5 ? (
         <ResetPrompt onReset={reset} />
       ) : (
         <StepButtons
@@ -160,7 +162,7 @@ export const Vertical = () => {
           </Step>
         ))}
       </Steps>
-      {activeStep === 3 ? (
+      {activeStep === 5 ? (
         <ResetPrompt onReset={reset} />
       ) : (
         <StepButtons
@@ -186,7 +188,7 @@ export const WithDescription = () => {
           </Step>
         ))}
       </Steps>
-      {activeStep === 3 ? (
+      {activeStep === 5 ? (
         <ResetPrompt onReset={reset} />
       ) : (
         <StepButtons

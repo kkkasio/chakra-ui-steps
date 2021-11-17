@@ -83,8 +83,9 @@ export const Step = forwardRef<StepProps, 'div'>(
     const {
       description,
       icon,
-      label,
+      label,       
       labelContainer,
+      labelIconContainer,
       step,
       stepContainer,
       stepIconContainer,
@@ -98,19 +99,26 @@ export const Step = forwardRef<StepProps, 'div'>(
 
     const stepIconContainerStyles = {
       display: 'flex',
-      borderRadius: '50%',
+      borderRadius: '50%',      
       alignItems: 'center',
       justifyContent: 'center',
-      ...stepIconContainer,
+      ...stepIconContainer,      
     };
-
+    
     const labelStyles = {
       fontWeight: 'medium',
       color: mode(`gray.900`, `gray.100`)(props),
       textAlign: 'center',
-      fontSize: 'md',
+      fontSize: 'md',    
       ...label,
     };
+
+    const labelIcon = {
+      fontWeight: 'medium',      
+      textAlign: 'center',
+      fontSize: 'md',      
+      ...labelIconContainer,
+    }
 
     const descriptionStyles = {
       marginTop: '-2px',
@@ -168,7 +176,7 @@ export const Step = forwardRef<StepProps, 'div'>(
           </MotionFlex>
         );
       return (
-        <AnimatedSpan key="label" __css={labelStyles} {...animationConfig}>
+        <AnimatedSpan key="label" __css={labelIcon} {...animationConfig}>
           {(index || 0) + 1}
         </AnimatedSpan>
       );
@@ -181,8 +189,9 @@ export const Step = forwardRef<StepProps, 'div'>(
           {...styleProps}
           onClick={() => handleClick(index)}
           aria-disabled={!hasVisited}
+          
           __css={{
-            opacity,
+            opacity,            
             flexDir: isVertical ? 'column' : 'row',
             alignItems: isVertical ? 'flex-start' : 'center',
             flex: isLastStep && !isVertical ? '0 0 auto' : '1 0 auto',
@@ -197,8 +206,9 @@ export const Step = forwardRef<StepProps, 'div'>(
           <chakra.div
             __css={{
               display: 'flex',
-              flexDir: 'row',
+              flexDir: 'row',              
               alignItems: 'center',
+              
               ...stepContainer,
             }}
           >
@@ -207,7 +217,7 @@ export const Step = forwardRef<StepProps, 'div'>(
               aria-current={isCurrentStep ? 'step' : undefined}
               data-invalid={dataAttr(isCurrentStep && isError)}
               data-highlighted={dataAttr(isCompletedStep)}
-              data-clickable={dataAttr(clickable)}
+              data-clickable={dataAttr(clickable)}              
             >
               <AnimatePresence exitBeforeEnter>{renderIcon}</AnimatePresence>
             </chakra.div>
@@ -219,6 +229,7 @@ export const Step = forwardRef<StepProps, 'div'>(
                 justifyContent: 'center',
                 alignItems: 'flex-start',
                 ...labelContainer,
+                
               }}
             >
               {!!labelProp && (
