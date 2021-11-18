@@ -24,7 +24,7 @@ const baseStyleIcon: SystemStyleObject = {
   strokeWidth: '2px',
 };
 
-const baseStyleLabel: SystemStyleFunction = props => ({
+const baseStyleLabel: SystemStyleFunction = () => ({
   color: '#1A171B',
 });
 
@@ -44,12 +44,12 @@ const baseStyleConnector: SystemStyleFunction = props => {
     _highlighted: {
       borderColor: activeColor,
     },
-    mt: '-25px'
+    mt: ['8px', '8px', '-24px']
   };
 };
 
 const baseStyleStepIconContainer: SystemStyleFunction = props => {
-  const { colorScheme: c } = props;  
+  const { colorScheme: c } = props;
   const inactiveColor = '#fff';
   const activeColor = `${c}.500`;
 
@@ -87,8 +87,8 @@ const baseStyle: PartsStyleFunction<typeof parts> = props => ({
   labelContainer: {},
   labelIconContainer: {},
   step: {},
-  stepContainer: {    
-    flexDir: 'column',
+  stepContainer: {
+    flexDir: ['row', 'row', 'column'],
   },
   stepIconContainer: baseStyleStepIconContainer(props),
   steps: {},
