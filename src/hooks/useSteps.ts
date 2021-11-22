@@ -3,9 +3,8 @@ type UseSteps = {
   initialStep: number;
 };
 
-type StateValue = {
-  label: 'loading' | 'error' | undefined;
-}
+type StateValue = 'loading' | 'error' | undefined;
+
 
 export function useSteps({ initialStep }: UseSteps) {
   const [activeStep, setActiveStep] = React.useState(initialStep);
