@@ -3,8 +3,15 @@ type UseSteps = {
   initialStep: number;
 };
 
+type StateValue = {
+  label: 'loading' | 'error' | undefined;
+}
+
 export function useSteps({ initialStep }: UseSteps) {
   const [activeStep, setActiveStep] = React.useState(initialStep);
+
+  const [stepState, setStepState] = React.useState<StateValue>();
+
 
   const nextStep = () => {
     setActiveStep(prev => prev + 1);
@@ -22,5 +29,9 @@ export function useSteps({ initialStep }: UseSteps) {
     setActiveStep(step);
   };
 
-  return { nextStep, prevStep, reset, setStep, activeStep };
+  const changeStepState = (value: StateValue) => {
+    setStepState(value);
+  }
+
+  return { nextStep, prevStep, reset, setStep, activeStep, stepState, changeStepState };
 }
