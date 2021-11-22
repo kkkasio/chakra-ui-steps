@@ -29,7 +29,7 @@ export const Steps = forwardRef<StepsProps, 'div'>(
       textAlign: 'center',
       width: '100%',
       display: 'flex',
-      flex: 1,
+      //flex: 1,
       ...styles.steps,
     };
 

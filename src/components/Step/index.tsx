@@ -190,13 +190,20 @@ export const Step = forwardRef<StepProps, 'div'>(
           onClick={() => handleClick(index)}
           aria-disabled={!hasVisited}
           
+          
           __css={{
             opacity,            
             flexDir: isVertical ? 'column' : 'row',
             alignItems: isVertical ? 'flex-start' : 'center',
-            flex: isLastStep && !isVertical ? '0 0 auto' : '1 0 auto',
-            justifyContent:
-              isLastStep && !isVertical ? 'flex-end' : 'flex-start',
+            
+            /*flexGrow: 1,
+            flexBasis: '1px',
+            flexShrink: 0,*/
+            
+            
+           // flex: isLastStep && !isVertical ? '0 1 auto' : '1 0 auto',
+            justifyContent: isLastStep && !isVertical ? 'flex-end' : 'flex-start',            
+            
             _hover: {
               cursor: clickable ? 'pointer' : 'default',
             },
@@ -217,7 +224,7 @@ export const Step = forwardRef<StepProps, 'div'>(
               aria-current={isCurrentStep ? 'step' : undefined}
               data-invalid={dataAttr(isCurrentStep && isError)}
               data-highlighted={dataAttr(isCompletedStep)}
-              data-clickable={dataAttr(clickable)}              
+              data-clickable={dataAttr(clickable)}                          
             >
               <AnimatePresence exitBeforeEnter>{renderIcon}</AnimatePresence>
             </chakra.div>
