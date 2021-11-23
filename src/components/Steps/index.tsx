@@ -29,6 +29,8 @@ export const Steps = forwardRef<StepsProps, 'div'>(
       textAlign: 'center',
       width: '100%',
       display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
       //flex: 1,
       ...styles.steps,
     };

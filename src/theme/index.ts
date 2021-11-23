@@ -91,7 +91,10 @@ const baseStyle: PartsStyleFunction<typeof parts> = props => ({
     flexDir: ['row', 'row', 'column'],
   },
   stepIconContainer: baseStyleStepIconContainer(props),
-  steps: {},
+  steps: {
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
 });
 
 const sizes = {
