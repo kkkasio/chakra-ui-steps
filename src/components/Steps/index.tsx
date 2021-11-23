@@ -29,8 +29,7 @@ export const Steps = forwardRef<StepsProps, 'div'>(
       textAlign: 'center',
       width: '100%',
       display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
+      flexWrap: 'wrap',      
       //flex: 1,
       ...styles.steps,
     };
@@ -75,7 +74,7 @@ export const Steps = forwardRef<StepsProps, 'div'>(
         <chakra.div
           ref={ref}
           __css={{
-            justifyContent: stepCount === 1 ? 'flex-end' : 'space-between',
+            justifyContent: stepCount === 1 ? 'flex-end' : 'center',
             flexDir: orientation === 'vertical' ? 'column' : 'row',
             ...stepsStyles,
           }}

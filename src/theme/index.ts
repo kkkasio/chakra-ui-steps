@@ -92,8 +92,7 @@ const baseStyle: PartsStyleFunction<typeof parts> = props => ({
   },
   stepIconContainer: baseStyleStepIconContainer(props),
   steps: {
-    flexWrap: 'wrap',
-    justifyContent: 'center',
+    flexWrap: 'wrap'    
   },
 });
 
