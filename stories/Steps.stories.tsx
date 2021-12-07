@@ -110,13 +110,10 @@ const Content = ({ index, ...rest }: ContentProps) => {
   );
 };
 
-const steps = [{ label: 'Dados de  1' }, { label: 'Dados de  2' }, { label: 'Dados de  3' }, { label: 'Dados de  4' }, { label: 'Dados de  5' }];
+const steps = [{ label: 'Dados de  1' }];
 const descriptionSteps = [
   { label: 'Descrição 1', description: 'Step 1 Description' },
-  { label: 'Descrição 2', description: 'Step 2 Description' },
-  { label: 'Descrição 3', description: 'Step 3 Description' },
-  { label: 'Descrição 4', description: 'Step 3 Description' },
-  { label: 'Descrição 5', description: 'Step 3 Description' },
+
 ];
 
 //👇 We create a “template” of how args map to rendering

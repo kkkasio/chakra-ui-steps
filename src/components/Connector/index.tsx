@@ -27,7 +27,7 @@ export const Connector = React.memo(
 
     const connectorStyles = {
       flex: 1,
-      width: '46px',
+      width: ['100%', '100%', '46px'],
       display: 'flex',
       ...connector,
     };
